@@ -1,4 +1,6 @@
 Crimsonserviceweek::Application.routes.draw do
+  resources :sw_interactions
+
   resources :users
 
   get "home/index"

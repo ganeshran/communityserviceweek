@@ -1,0 +1,25 @@
+<h1>Listing sw_interactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sw_interactions.each do |sw_interaction| %>
+      <tr>
+        <td><%= link_to 'Show', sw_interaction %></td>
+        <td><%= link_to 'Edit', edit_sw_interaction_path(sw_interaction) %></td>
+        <td><%= link_to 'Destroy', sw_interaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sw interaction', new_sw_interaction_path %>

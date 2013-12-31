@@ -1,0 +1,17 @@
+<%= form_for(@sw_interaction) do |f| %>
+  <% if @sw_interaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sw_interaction.errors.count, "error") %> prohibited this sw_interaction from being saved:</h2>
+
+      <ul>
+      <% @sw_interaction.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

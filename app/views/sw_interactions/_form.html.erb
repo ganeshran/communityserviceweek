@@ -22,6 +22,10 @@
 	<%= label_tag(:category, "Hands-on/Pro Bono") %> 
 	<%= select_tag(:category, "<option>Hands-on</option><option>Pro-Bono</option>".html_safe, :class => "form-control") %>
     </div>
+    <div class="form-group">
+	<%= label_tag(:volunteerHours, "Volunteer Hours") %> 
+	<%= text_field_tag(:volunteerHours,nil, :class => "form-control") %>
+    </div>
 	<%= f.submit %>
   </div>
  </div>

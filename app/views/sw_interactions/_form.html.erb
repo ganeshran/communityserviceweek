@@ -1,34 +1,39 @@
 <%= form_for(@sw_interaction) do |f| %>
-	<% if @sw_interaction.errors.any? %>
-	<div id="error_explanation">
-	<h2><%= pluralize(@sw_interaction.errors.count, "error") %> prohibited this sw_interaction from being saved:</h2>
 
-	<ul>
-		<% @sw_interaction.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-	<% end %>
-	</ul>
-</div>
-  <% end %>
+	<div class="actions container">
+	<div class="row">
+		<div class="col-lg-7">
+			<% if @sw_interaction.errors.any? %>
+				<div class="errorPanel panel panel-danger">
+				<div class="panel-heading">	<h4><%= pluralize(@sw_interaction.errors.count, "error") %> prevented this Activity from being saved:</h4>
+				</div>
 
-<div class="actions container">
- <div class="row">
-  <div class="col-lg-7">
-    <div class="form-group">
-	<%= label_tag(:organization, "Activity") %>
-	<%=  text_field_tag(:organization, @sw_interaction.organization, :class=>'form-control') %>
-    </div>
-    <div class="form-group">
-	<%= label_tag(:category, "Hands-on/Pro Bono") %> 
-	<%= select_tag(:category, "<option>Hands-on</option><option>Pro-Bono</option>".html_safe, :class => "form-control") %>
-    </div>
-    <div class="form-group">
-	<%= label_tag(:volunteerHours, "Volunteer Hours") %> 
-	<%= text_field_tag(:volunteerHours,@sw_interaction.volunteerHours, :class => "form-control") %>
-    </div>
-    <%= f.submit 'Log Volunteer Activity', :class=> "btn btn-success"%>
-    <%= link_to 'Back', sw_interactions_path, :class => "btn btn-warning" %>
-  </div>
- </div>
+				<ul class="list-group">
+					<% @sw_interaction.errors.full_messages.each do |msg| %>
+						<li class="list-group-item"><%= msg %></li>
+				<% end %>
+				</ul>
+			</div>
+		<% end %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-7">
+			<div class="form-group">
+				<%= label_tag(:organization, "Activity") %>
+				<%=  text_field_tag(:organization, @sw_interaction.organization, :class=>'form-control') %>
+			</div>
+			<div class="form-group">
+				<%= label_tag(:category, "Hands-on/Pro Bono") %> 
+				<%= select_tag(:category, "<option>Hands-on</option><option>Pro-Bono</option>".html_safe, :class => "form-control") %>
+			</div>
+			<div class="form-group">
+				<%= label_tag(:volunteerHours, "Volunteer Hours") %> 
+				<%= text_field_tag(:volunteerHours,@sw_interaction.volunteerHours, :class => "form-control") %>
+			</div>
+			<%= f.submit 'Log Volunteer Activity', :class=> "btn btn-success"%>
+			<%= link_to 'Back', sw_interactions_path, :class => "btn btn-info" %>
+		</div>
+	</div>
 </div>
 <% end %>

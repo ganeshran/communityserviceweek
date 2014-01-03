@@ -19,8 +19,8 @@
 	<td> <%= sw_interaction.organization %> </td>
 	<td> <%= sw_interaction.category %> </td>
 	<td> <%= sw_interaction.volunteerHours %> </td>
-        <td><%= link_to 'Edit', edit_sw_interaction_path(sw_interaction) %></td>
-        <td><%= link_to 'Delete', sw_interaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<td><%= link_to 'Edit', edit_sw_interaction_path(sw_interaction), :class => "btn btn-warning" %></td>
+	<td><%= link_to 'Delete', sw_interaction, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 </div>
 <br>
 
-<%= link_to 'Log New Volunteer Activity', new_sw_interaction_path %>
+<%= link_to 'Log New Volunteer Activity', new_sw_interaction_path, :class => "btn btn-success" %>

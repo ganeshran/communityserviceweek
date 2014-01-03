@@ -1,25 +1,31 @@
-<h1>Listing sw_interactions</h1>
-
-<table>
+<div class="panel panel-success">
+	<div class="panel-heading">
+		<strong>List of all Volunteer hours tracking</strong> 
+	</div>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Organization</th>
+      <th>Category</th>
+      <th>Volunteer Hours</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
   <tbody>
     <% @sw_interactions.each do |sw_interaction| %>
       <tr>
-        <td><%= link_to 'Show', sw_interaction %></td>
+	<td> <%= sw_interaction.organization %> </td>
+	<td> <%= sw_interaction.category %> </td>
+	<td> <%= sw_interaction.volunteerHours %> </td>
         <td><%= link_to 'Edit', edit_sw_interaction_path(sw_interaction) %></td>
-        <td><%= link_to 'Destroy', sw_interaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', sw_interaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
-<%= link_to 'New Sw interaction', new_sw_interaction_path %>
+<%= link_to 'Log New Volunteer Activity', new_sw_interaction_path %>

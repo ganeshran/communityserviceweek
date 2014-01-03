@@ -32,8 +32,8 @@
 				<%= text_field_tag(:volunteerHours,@sw_interaction.volunteerHours, :class => "form-control") %>
 			</div>
 			<div class="form-group">
-				<%= label_tag(:activityDate, "Date") %> 
-				<%= text_field_tag(:activityDate,@sw_interaction.volunteerHours, :class => "form-control") %>
+				<%= label_tag(:activitydate, "Date") %> 
+				<%= text_field_tag(:activitydate,@sw_interaction.activitydate, :class => "form-control") %>
 			</div>
 			<%= f.submit 'Log Volunteer Activity', :class=> "btn btn-success"%>
 			<%= link_to 'Back', sw_interactions_path, :class => "btn btn-info" %>

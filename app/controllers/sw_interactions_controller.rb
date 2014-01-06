@@ -1,5 +1,6 @@
 class SwInteractionsController < ApplicationController
 	before_action :set_sw_interaction, only: [:show, :edit, :update, :destroy]
+	before_action :signed_in_user, only: [:new, :edit, :update]
 
 	# GET /sw_interactions
 	# GET /sw_interactions.json
@@ -72,5 +73,13 @@ class SwInteractionsController < ApplicationController
 	def sw_interaction_params
 		params.permit(:organization, :volunteerHours, :category, :activitydate)
 	end
+
+	def signed_in_user
+		unless signed_in?
+			store_location
+			redirect_to signin_url, notice: "Please sign in."
+		end
+	end
+
 
 end

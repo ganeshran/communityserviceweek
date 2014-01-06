@@ -33,7 +33,7 @@
 			</div>
 			<div class="form-group">
 				<%= label_tag(:activitydate, "Date") %> 
-				<%= text_field_tag(:activitydate,@sw_interaction.activitydate, :class => "form-control") %>
+				<%= text_field_tag(:activitydate,@sw_interaction.activitydate.nil? ? nil : @sw_interaction.activitydate.strftime('%m/%d/%Y'), :class => "form-control") %>
 			</div>
 			<%= f.submit 'Log Volunteer Activity', :class=> "btn btn-success"%>
 			<%= link_to 'Back', sw_interactions_path, :class => "btn btn-info" %>

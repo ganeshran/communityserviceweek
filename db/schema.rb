@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140103140144) do
+ActiveRecord::Schema.define(version: 20140106120812) do
 
   create_table "sw_interactions", force: true do |t|
     t.string   "organization"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140103140144) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
   end
 
 end

@@ -4,7 +4,7 @@ Crimsonserviceweek::Application.routes.draw do
 	resources :sessions, only: [:new, :create, :destroy]
 
 	get "home/index"
-	root to: "sw_interactions#index"
+	root to: "home#index"
 	match '/signup',  to: 'users#new',            via: 'get'
 	match '/signin',  to: 'sessions#new',         via: 'get'
 	match '/signout', to: 'sessions#destroy',     via: 'delete'

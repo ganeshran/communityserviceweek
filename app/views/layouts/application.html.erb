@@ -7,6 +7,9 @@
 <%= csrf_meta_tags %>
 </head>
 <body>
+	      <% flash.each do |key, value| %>
+		      <div class="alert alert-<%= key %>"><p><strong><%= value %></strong></p></div>
+	      <% end %>
 <div class="container">
 	<nav class="navbar navbar-default" role="navigation">
 		<!-- Brand and toggle get grouped for better mobile display -->

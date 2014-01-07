@@ -14,7 +14,7 @@
 
 body	
 {
-	padding-top: 20px;
+	/*padding-top: 20px;*/
 	padding-bottom: 20px;
 
 	.navbar
@@ -33,7 +33,12 @@ body
 			color: #fff;
 		}
 		height: 50px;
+		margin-top:20px;
 	}
 
+	.alert
+	{
+		margin-top:0px;
+	}
 
 }

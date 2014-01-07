@@ -31,7 +31,8 @@ class SwInteractionsController < ApplicationController
 
 		respond_to do |format|
 			if @sw_interaction.save
-				format.html { redirect_to @sw_interaction, notice: 'Sw interaction was successfully created.' }
+				flash[:success] = 'Activity was successfully logged' 
+				format.html { redirect_to @sw_interaction }
 				format.json { render action: 'show', status: :created, location: @sw_interaction }
 			else
 				format.html { render action: 'new' }
@@ -45,7 +46,8 @@ class SwInteractionsController < ApplicationController
 	def update
 		respond_to do |format|
 			if @sw_interaction.update(sw_interaction_params)
-				format.html { redirect_to @sw_interaction, notice: 'Sw interaction was successfully updated.' }
+				flash[:success] = "Activity was successfully updated" 
+				format.html { redirect_to @sw_interaction }
 				format.json { head :no_content }
 			else
 				format.html { render action: 'edit' }

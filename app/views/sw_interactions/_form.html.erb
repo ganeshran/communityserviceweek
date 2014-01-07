@@ -25,7 +25,7 @@
 			</div>
 			<div class="form-group">
 				<%= label_tag(:category, "Hands-on/Pro Bono") %> 
-				<%= select_tag(:category, "<option>Hands-on</option><option>Pro-Bono</option>".html_safe, :class => "form-control") %>
+				<%= select_tag(:category,options_for_select([ "Hands-on", "Pro-bono" ], @sw_interaction.category ) , :class => "form-control") %>
 			</div>
 			<div class="form-group">
 				<%= label_tag(:volunteerHours, "Volunteer Hours") %> 
@@ -33,7 +33,7 @@
 			</div>
 			<div class="form-group">
 				<%= label_tag(:activitydate, "Date") %> 
-				<%= text_field_tag(:activitydate,@sw_interaction.activitydate.nil? ? nil : @sw_interaction.activitydate.strftime('%m/%d/%Y'), :class => "form-control") %>
+				<%= text_field_tag(:activitydate,@sw_interaction.activitydate.nil? ? nil : @sw_interaction.activitydate.strftime('%d/%m/%Y'), :class => "form-control") %>
 			</div>
 			<%if @sw_interaction.new_record? %>
 				<%= f.submit 'Log New Activity', :class=> "btn btn-success"%>

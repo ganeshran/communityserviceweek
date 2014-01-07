@@ -22,9 +22,9 @@
 	<td> <%= sw_interaction.category %> </td>
 	<td> <%= sw_interaction.volunteerHours %> </td>
 	<td> <%= sw_interaction.activitydate.strftime("%m/%d/%Y") %></td>
-	<td> <%= link_to 'Show', sw_interaction, :class => "btn btn-success" %> </td>
-	<td><%= link_to 'Edit', edit_sw_interaction_path(sw_interaction), :class => "btn btn-warning" %></td>
-	<td><%= link_to 'Delete', sw_interaction, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+	<td> <%= link_to 'Show', sw_interaction, :class => "btn btn-success", data: { no_turbolink: true } %> </td>
+	<td><%= link_to 'Edit', edit_sw_interaction_path(sw_interaction), :class => "btn btn-warning", data: { no_turbolink: true } %></td>
+	<td><%= link_to 'Delete', sw_interaction, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger", data: { no_turbolink: true } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 </div>
 <br>
 
-<%= link_to 'Log New Volunteer Activity', new_sw_interaction_path, :class => "btn btn-success" %>
+<%= link_to 'Log New Volunteer Activity', new_sw_interaction_path, :class => "btn btn-success", data: { no_turbolink: true } %>

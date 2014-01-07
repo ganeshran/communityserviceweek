@@ -2,8 +2,8 @@
 <html>
 <head>
 <title>Crimsonserviceweek</title>
-<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag    "application", media: "all" %>
+<%= javascript_include_tag "application" %>
 <%= csrf_meta_tags %>
 </head>
 <body>
@@ -46,9 +46,9 @@
 	      </form> -->
 			<ul class="nav navbar-nav navbar-right">
 				<% if signed_in? %>
-					<%= link_to "Sign out", signout_path, method: "delete", :class => "btn btn-primary" %>
+					<%= link_to "Sign out", signout_path, method: "delete", :class => "btn btn-primary",data: { no_turbolink: true } %>
 			<% else %>
-					<%= link_to "Sign in", signin_path, :class => "btn btn-success" %>
+				<%= link_to "Sign in", signin_path, :class => "btn btn-success", data: { no_turbolink: true } %>
 			<% end %>
 				<!--  <li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -64,7 +64,9 @@
 		</div><!-- /.navbar-collapse  -->
 	</nav>
 	<div class="row">
-		<%= yield %>
+		<div class="col-lg-12">
+			<%= yield %>
+		</div>
 	</div>
 </div>
 </body>

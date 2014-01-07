@@ -35,7 +35,11 @@
 				<%= label_tag(:activitydate, "Date") %> 
 				<%= text_field_tag(:activitydate,@sw_interaction.activitydate.nil? ? nil : @sw_interaction.activitydate.strftime('%m/%d/%Y'), :class => "form-control") %>
 			</div>
-			<%= f.submit 'Log Volunteer Activity', :class=> "btn btn-success"%>
+			<%if @sw_interaction.new_record? %>
+				<%= f.submit 'Log New Activity', :class=> "btn btn-success"%>
+			<%else%>
+				<%= f.submit 'Edit Activity', :class=> "btn btn-success"%> 
+			<%end%>
 			<%= link_to 'Back', sw_interactions_path, :class => "btn btn-info",data: { no_turbolink: true } %>
 	</div>
 </div>

@@ -24,7 +24,7 @@
 	<td> <%= sw_interaction.activitydate.strftime("%d/%m/%Y") %></td>
 	<td> <%= link_to 'Show', sw_interaction, :class => "btn btn-success", data: { no_turbolink: true } %> </td>
 	<td><%= link_to 'Edit', edit_sw_interaction_path(sw_interaction), :class => "btn btn-warning", data: { no_turbolink: true } %></td>
-	<td><%= link_to 'Delete', sw_interaction, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger", data: { no_turbolink: true } %></td>
+	<td><%= link_to 'Delete', sw_interaction, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

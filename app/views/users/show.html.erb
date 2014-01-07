@@ -1,14 +1,10 @@
+<div class="col-lg-12">
 <p id="notice"><%= notice %></p>
+<h2>Welcome <%= @user.name %>!</h2>
+<p>Please chose one of the available options</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Log New Volunteer Activity', new_sw_interaction_path, :class => "btn btn-success" %>
+<%= link_to 'Your Activities', sw_interactions_path, :class => "btn btn-primary" %>
+<%= link_to 'Edit', edit_user_path(@user), :class => "btn btn-warning" %>
+<%= link_to 'Back', users_path, :class => "btn btn-info" %>
+</div>

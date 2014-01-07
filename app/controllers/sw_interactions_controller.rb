@@ -5,7 +5,7 @@ class SwInteractionsController < ApplicationController
 	# GET /sw_interactions
 	# GET /sw_interactions.json
 	def index
-		@sw_interactions = SwInteraction.all
+		@sw_interactions = current_user.sw_interactions.all
 	end
 
 	# GET /sw_interactions/1
@@ -26,7 +26,8 @@ class SwInteractionsController < ApplicationController
 	# POST /sw_interactions.json
 	def create
 		puts sw_interaction_params.inspect
-		@sw_interaction = SwInteraction.new(sw_interaction_params)
+		@sw_interaction = current_user.sw_interactions.build(sw_interaction_params)
+#		@sw_interaction = SwInteraction.new(sw_interaction_params)
 
 		respond_to do |format|
 			if @sw_interaction.save

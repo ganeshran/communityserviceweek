@@ -1,6 +1,6 @@
 class SwInteractionsController < ApplicationController
 	before_action :set_sw_interaction, only: [:show, :edit, :update, :destroy]
-	before_action :signed_in_user, only: [:new, :edit, :update]
+	before_action :signed_in_user, only: [:new, :edit, :update, :index]
 
 	# GET /sw_interactions
 	# GET /sw_interactions.json
@@ -80,7 +80,8 @@ class SwInteractionsController < ApplicationController
 	def signed_in_user
 		unless signed_in?
 			store_location
-			redirect_to signin_url, notice: "Please sign in."
+			flash[:danger] = "Please sign in to access this page"
+			redirect_to signin_url
 		end
 	end
 

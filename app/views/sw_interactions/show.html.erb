@@ -19,8 +19,11 @@
 				<tr>	<td>Volunteer Hours</td>
 					<td><%= @sw_interaction.volunteerHours%></td>
 				</tr>
-				<tr>	<td>Activity Date</td>
-					<td><%= @sw_interaction.activitydate.strftime('%d/%m/%Y')%></td>
+				<tr>	<td>From Date</td>
+					<td><%= @sw_interaction.fromactivitydate.strftime('%d/%m/%Y')%></td>
+				</tr>
+				<tr>	<td>To Date</td>
+					<td><%= @sw_interaction.toactivitydate.strftime('%d/%m/%Y')%></td>
 				</tr>
 				<tr>	<td>Created By</td>
 					<td><%= @sw_interaction.user.name %></td>

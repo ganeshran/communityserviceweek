@@ -27,4 +27,4 @@ en:
       sw_interaction:
         fromactivitydate: "From Date"
         toactivitydate: "To Date"
-        volunteerhours: "Volunteer Hours"
+        volunteerHours: "Volunteer Hours"

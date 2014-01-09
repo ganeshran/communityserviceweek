@@ -2,7 +2,6 @@ class SwInteraction < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :organization
 	validates :user_id, presence: true
-	validates :organization_id, presence:true
 	validates :volunteerHours, presence: true, numericality: true
 	validate :start_must_be_before_end_time
 

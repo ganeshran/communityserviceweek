@@ -21,24 +21,24 @@
 		<div class="col-lg-7">
 			<div class="form-group">
 				<%= label_tag(:organization, "Activity") %>
-				<%= select_tag(:organization,options_for_select(@organizations, @sw_interaction.organization) , :class => "form-control") %>
+				<%= f.collection_select(:organization_id, Organization.all,:id,:name,{:prompt => true},{:class=>'form-control'}) %>
 
 			</div>
 			<div class="form-group">
 				<%= label_tag(:category, "Hands-on/Pro Bono") %> 
-				<%= select_tag(:category,options_for_select([ "Hands-on", "Pro-bono" ], @sw_interaction.category ) , :class => "form-control") %>
+				<%= f.select(:category,options_for_select([ "Hands-on", "Pro-bono" ], @sw_interaction.category ) , {:class => "form-control"}) %>
 			</div>
 			<div class="form-group">
 				<%= label_tag(:volunteerHours, "Volunteer Hours") %> 
-				<%= text_field_tag(:volunteerHours,@sw_interaction.volunteerHours, :class => "form-control") %>
+				<%= f.text_field(:volunteerHours,{:class => "form-control"}) %>
 			</div>
 			<div class="form-group">
 				<%= label_tag(:fromactivitydate, "From Date") %> 
-				<%= text_field_tag(:fromactivitydate,@sw_interaction.fromactivitydate.nil? ? nil : @sw_interaction.fromactivitydate.strftime('%d/%m/%Y'), :class => "form-control activitydate") %>
+				<%= f.text_field(:fromactivitydate,:class => "form-control activitydate") %>
 			</div>
 			<div class="form-group">
 				<%= label_tag(:toactivitydate, "To Date") %> 
-				<%= text_field_tag(:toactivitydate,@sw_interaction.toactivitydate.nil? ? nil : @sw_interaction.toactivitydate.strftime('%d/%m/%Y'), :class => "form-control activitydate") %>
+				<%= f.text_field(:toactivitydate, :class => "form-control activitydate") %>
 			</div>
 			<%if @sw_interaction.new_record? %>
 				<%= f.submit 'Log New Activity', :class=> "btn btn-success"%>

@@ -10,7 +10,16 @@
 			<table class="table">
 				<tbody>
 				<tr>
-					<td>Organization</td>
+					<td>Organization Name</td>
+					<td><%= @sw_interaction.organization.name%></td>
+				</tr>
+				<tr>
+					<td>Organization Address</td>
+					<td><%= @sw_interaction.organization.address%></td>
+				</tr>
+				<tr>
+					<td>Organization Phone</td>
+					<td><%= @sw_interaction.organization.phone %></td>
 				</tr>
 				<tr>	<td>Category</td>
 					<td><%= @sw_interaction.category %></td>

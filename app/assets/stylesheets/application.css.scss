@@ -45,19 +45,24 @@ body
 	.alert
 	{
 		margin-top:0px;
+		position:fixed;
+		left: 0;
+		right: 0;
+		z-index: 7000;
+	}
+
+	#error_explanation {
+		@extend .alert;
+		@extend .alert-danger;
+		width: inherit;
+	}
+
+	.field_with_errors {
+		@extend .has-error;
+		display: inherit;
+		padding: inherit;
+		background-color: inherit;
 	}
 
 }
 
-#error_explanation {
-	@extend .alert;
-	@extend .alert-danger;
-	width: inherit;
-}
-
-.field_with_errors {
-	@extend .has-error;
-	display: inherit;
-	padding: inherit;
-	background-color: inherit;
-}

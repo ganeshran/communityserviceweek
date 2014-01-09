@@ -8,7 +8,8 @@
       <th>Organization</th>
       <th>Category</th>
       <th>Volunteer Hours</th>
-      <th>Activity Date</th>
+      <th>From Date</th>
+      <th>To Date</th>
       <th>Show</th>
       <th>Edit</th>
       <th>Delete</th>
@@ -21,7 +22,8 @@
 	<td> <%= sw_interaction.organization %> </td>
 	<td> <%= sw_interaction.category %> </td>
 	<td> <%= sw_interaction.volunteerHours %> </td>
-	<td> <%= sw_interaction.activitydate.strftime("%d/%m/%Y") %></td>
+	<td> <%= sw_interaction.fromactivitydate.strftime("%d/%m/%Y") %></td>
+	<td> <%= sw_interaction.toactivitydate.strftime("%d/%m/%Y") %></td>
 	<td> <%= link_to 'Show', sw_interaction, :class => "btn btn-success", data: { no_turbolink: true } %> </td>
 	<td><%= link_to 'Edit', edit_sw_interaction_path(sw_interaction), :class => "btn btn-warning", data: { no_turbolink: true } %></td>
 	<td><%= link_to 'Delete', sw_interaction, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>

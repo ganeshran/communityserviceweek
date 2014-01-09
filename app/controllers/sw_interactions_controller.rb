@@ -16,6 +16,7 @@ class SwInteractionsController < ApplicationController
 	# GET /sw_interactions/new
 	def new
 		@sw_interaction = SwInteraction.new
+		@organizations = Organization.all
 	end
 
 	# GET /sw_interactions/1/edit

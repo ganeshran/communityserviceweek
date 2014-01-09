@@ -19,7 +19,7 @@
   <tbody>
     <% @sw_interactions.each do |sw_interaction| %>
       <tr>
-	<td> <%= sw_interaction.category %> </td>
+	<td> <%= sw_interaction.organization.name %> </td>
 	<td> <%= sw_interaction.category %> </td>
 	<td> <%= sw_interaction.volunteerHours %> </td>
 	<td> <%= sw_interaction.fromactivitydate.strftime("%d/%m/%Y") %></td>

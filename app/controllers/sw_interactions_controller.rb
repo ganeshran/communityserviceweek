@@ -1,5 +1,6 @@
 class SwInteractionsController < ApplicationController
-	before_action :set_sw_interaction, only: [:show, :edit, :update, :destroy]
+	before_action :set_sw_interaction, only: [:show]
+  	before_action :correct_user, only:  [:edit, :update, :destroy]
 	before_action :signed_in_user, only: [:new, :edit, :update, :index]
 
 	# GET /sw_interactions
@@ -16,7 +17,6 @@ class SwInteractionsController < ApplicationController
 	# GET /sw_interactions/new
 	def new
 		@sw_interaction = SwInteraction.new
-		@organizations = Organization.all
 	end
 
 	# GET /sw_interactions/1/edit
@@ -28,7 +28,7 @@ class SwInteractionsController < ApplicationController
 	def create
 		puts sw_interaction_params.inspect
 		@sw_interaction = current_user.sw_interactions.build(sw_interaction_params)
-#		@sw_interaction = SwInteraction.new(sw_interaction_params)
+		#		@sw_interaction = SwInteraction.new(sw_interaction_params)
 
 		respond_to do |format|
 			if @sw_interaction.save
@@ -71,6 +71,11 @@ class SwInteractionsController < ApplicationController
 	# Use callbacks to share common setup or constraints between actions.
 	def set_sw_interaction
 		@sw_interaction = SwInteraction.find(params[:id])
+	end
+
+	def correct_user
+		@sw_interaction = current_user.sw_interactions.find_by(id: params[:id])
+		redirect_to root_url and flash[:danger] = "You cannot edit this record because it was created by someone else" if @sw_interaction.nil?
 	end
 
 	private

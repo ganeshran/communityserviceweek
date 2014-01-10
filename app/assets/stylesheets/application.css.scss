@@ -22,7 +22,7 @@ body
 	{
 		.btn
 		{
-			margin:10px;
+			margin:20px;
 			padding-top:5px;
 			padding-bottom:5px;
 			height:30px;
@@ -36,10 +36,11 @@ body
 
 		.navbar-brand
 		{
+			padding:0px;
 			padding-top: 0px;
 			padding-bottom:0px;
 		}
-		height: 50px;
+		height: 70px;
 		margin-top:20px;
 	}
 
@@ -63,6 +64,12 @@ body
 		display: inherit;
 		padding: inherit;
 		background-color: inherit;
+	}
+
+	li.dropdown
+	{
+		margin-top:10px;
+		margin-bottom:10px;
 	}
 
 }

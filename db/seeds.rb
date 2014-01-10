@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Organization.create([
+	{name:'Other Institutes'},
 	{name:'XYZ Public Service', address: 'Nungambakkam,Chennai', phone: '044-23329232'},
 	{name:'Akshaya Patra', address:'Adyar,Chennai',phone: '044-23235467'}
 ])

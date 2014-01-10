@@ -28,10 +28,10 @@
 					<td><%= @sw_interaction.volunteerHours%></td>
 				</tr>
 				<tr>	<td>From Date</td>
-					<td><%= @sw_interaction.fromactivitydate.strftime('%d/%m/%Y')%></td>
+					<td><%= @sw_interaction.fromactivitydate.strftime('%d/%m/%Y %I:%M %p')%></td>
 				</tr>
 				<tr>	<td>To Date</td>
-					<td><%= @sw_interaction.toactivitydate.strftime('%d/%m/%Y')%></td>
+					<td><%= @sw_interaction.toactivitydate.strftime('%d/%m/%Y %I:%M %p')%></td>
 				</tr>
 				<tr>	<td>Created By</td>
 					<td><%= @sw_interaction.user.name %></td>

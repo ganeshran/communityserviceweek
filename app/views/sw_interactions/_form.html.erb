@@ -34,11 +34,11 @@
 			</div>
 			<div class="form-group">
 				<%= label_tag(:fromactivitydate, "From Date") %> 
-				<%= f.text_field(:fromactivitydate,:class => "form-control activitydate") %>
+				<%= f.text_field(:fromactivitydate, :value => @sw_interaction.fromactivitydate.nil? ? nil : @sw_interaction.fromactivitydate.strftime("%m/%d/%Y %I:%M %p"), :class => "form-control activitydate") %>
 			</div>
 			<div class="form-group">
 				<%= label_tag(:toactivitydate, "To Date") %> 
-				<%= f.text_field(:toactivitydate, :class => "form-control activitydate") %>
+				<%= f.text_field(:toactivitydate,:value =>  @sw_interaction.toactivitydate.nil? ? nil : @sw_interaction.toactivitydate.strftime("%m/%d/%Y %I:%M %p"), :class => "form-control activitydate") %>
 			</div>
 			<%if @sw_interaction.new_record? %>
 				<%= f.submit 'Log New Activity', :class=> "btn btn-success"%>

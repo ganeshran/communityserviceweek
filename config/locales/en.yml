@@ -20,11 +20,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  activerecord:
-    attributes:
-      user:
-        email: "E-mail address"
-      sw_interaction:
-        fromactivitydate: "From Date"
-        toactivitydate: "To Date"
-        volunteerHours: "Volunteer Hours"
+activerecord:
+        attributes:
+          user:
+            email: "E-mail address"
+          sw_interaction:
+            fromactivitydate: "From Date"
+            toactivitydate: "To Date"
+            volunteerHours: "Volunteer Hours"
+date:
+        formats:
+          default: "%d/%m/%Y"
+time:
+        formats:
+          default: "%m/%d/%Y %I:%M %p" 

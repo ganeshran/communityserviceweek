@@ -1,11 +1,13 @@
 Crimsonserviceweek::Application.routes.draw do
-  get "organization/index"
-  get "organization/show"
-  get "organization/edit"
-  get "organization/create"
+	get "organization/index"
+	get "organization/show"
+	get "organization/edit"
+	get "organization/create"
 	resources :sw_interactions
 	resources :users
-	resources :organizations
+	resources :organizations do
+		resources	:sw_interactions, only: [:index]
+	end
 	resources :sessions, only: [:new, :create, :destroy]
 
 	get "home/index"

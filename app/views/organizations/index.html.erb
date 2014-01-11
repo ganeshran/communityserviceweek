@@ -8,6 +8,7 @@
       <th>Organization Name</th>
       <th>Address</th>
       <th>Phone Number</th>
+      <th>Activities</th>
       <th>Show</th>
       <th>Edit</th>
       <th>Delete</th>
@@ -20,6 +21,7 @@
 	<td> <%= organization.name %> </td>
 	<td> <%= organization.address%> </td>
 	<td> <%= organization.phone%> </td>
+	<td> <%= link_to 'Activities', organization_sw_interactions_path(organization), :class => "btn btn-primary", data: { no_turbolink: true } %> </td>
 	<td> <%= link_to 'Show', organization, :class => "btn btn-success", data: { no_turbolink: true } %> </td>
 	<td><%= link_to 'Edit', edit_organization_path(organization), :class => "btn btn-warning", data: { no_turbolink: true } %></td>
 	<td><%= link_to 'Delete', organization, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>

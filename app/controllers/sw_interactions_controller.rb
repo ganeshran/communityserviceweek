@@ -1,12 +1,22 @@
 class SwInteractionsController < ApplicationController
 	before_action :set_sw_interaction, only: [:show]
-  	before_action :correct_user, only:  [:edit, :update, :destroy]
+	before_action :correct_user, only:  [:edit, :update, :destroy]
 	before_action :signed_in_user, only: [:new, :edit, :update, :index]
 
 	# GET /sw_interactions
 	# GET /sw_interactions.json
 	def index
-		@sw_interactions = current_user.sw_interactions.all
+		if params[:organization_id].nil?
+			@sw_interactions = current_user.sw_interactions.all
+		else
+			@current_org = Organization.where(:id => params[:organization_id]).first
+			if @current_org.nil?
+				flash[:danger] = "This organization was not found. Redirecting to your activities"
+				redirect_to sw_interactions_path 
+			else
+				@sw_interactions = @current_org.sw_interactions.all
+			end
+		end
 	end
 
 	# GET /sw_interactions/1

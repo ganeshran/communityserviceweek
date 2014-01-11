@@ -1,11 +1,18 @@
 <div class="panel panel-success swListPanel">
 	<div class="panel-heading">
-		<h2>Welcome <%= @user.name %></h2> 
+		<h2><%= @user.name %> Profile</h2> 
 	</div>
-<p>Please chose one of the available options</p>
+	<table class="table table-hover">
+		<tbody>
+		<tr>
+			<td>Name</td>
+			<td><%= @user.name%></td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td><%= @user.email%></td>
+		</tr>
+		</tbody>
+	</table>
 
-<%= link_to 'Log New Volunteer Activity', new_sw_interaction_path, :class => "btn btn-success" %>
-<%= link_to 'Your Activities', sw_interactions_path, :class => "btn btn-primary" %>
-<%= link_to 'Edit', edit_user_path(@user), :class => "btn btn-warning" %>
-<%= link_to 'All Users', users_path, :class => "btn btn-info" %>
 </div>

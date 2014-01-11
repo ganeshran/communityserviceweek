@@ -16,6 +16,23 @@ class OrganizationsController < ApplicationController
 		@organization = Organization.new
 	end
 
+	# POST /sw_interactions
+	# POST /sw_interactions.json
+	def create
+		@organization = Organization.new(organization_params)
+
+		respond_to do |format|
+			if @organization.save
+				flash[:success] = 'Organization was successfully created' 
+				format.html { redirect_to @organization}
+				format.json { render action: 'show', status: :created, location: @organization}
+			else
+				format.html { render action: 'new' }
+				format.json { render json: @organization.errors, status: :unprocessable_entity }
+			end
+		end
+	end
+
 	# DELETE /sw_interactions/1
 	# DELETE /sw_interactions/1.json
 	def destroy
@@ -38,5 +55,9 @@ class OrganizationsController < ApplicationController
 	private
 	def admin_user
 		redirect_to(organizations_url) and flash[:danger] = "You have to be an admin to perform this action" unless current_user.admin?
+	end
+
+	def organization_params 
+		params.require(:organization).permit(:name, :address, :phone)
 	end
 end

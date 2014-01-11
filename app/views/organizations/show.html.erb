@@ -1,2 +1,26 @@
-<h1>Organization#show</h1>
-<p>Find me in app/views/organization/show.html.erb</p>
+<div class="panel panel-success swListPanel">
+	<div class="panel-heading">
+		<h2><%= @organization.name %></h2> 
+	</div>
+	<div class="panel-body">
+		<table class="table table-hover">
+			<tbody>
+			<tr>
+				<td>Name</td>
+				<td><%= @organization.name%></td>
+			</tr>
+			<tr>
+				<td>Address</td>
+				<td><%= @organization.address%></td>
+			</tr>
+			<tr>
+				<td>Phone</td>
+				<td><%= @organization.phone%></td>
+			</tr>
+			</tbody>
+		</table>
+
+		<%= link_to 'Edit', edit_organization_path(@organization), :class => "btn btn-warning" %> 
+		<%= link_to 'Back', organizations_path, :class => "btn btn-info" %>
+	</div>
+</div>

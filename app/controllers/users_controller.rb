@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 	# GET /users/new
 	def new
 		@user = User.new
+		@show_sidebar = false
 	end
 
 	# GET /users/1/edit

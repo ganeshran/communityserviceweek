@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 	def new
+		@show_sidebar=false
 	end
 
 	def create
@@ -8,7 +9,8 @@ class SessionsController < ApplicationController
 			sign_in user
 			redirect_back_or sw_interactions_path 
 		else
-			flash[:error] = 'Invalid email/password combination' # Not quite right!
+			@show_sidebar=false
+			flash.now[:danger] = 'Invalid email/password combination' # Not quite right!
 			render 'new'
 		end
 	end

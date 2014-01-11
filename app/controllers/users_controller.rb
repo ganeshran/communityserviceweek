@@ -65,7 +65,7 @@ class UsersController < ApplicationController
 
 	private
 	def admin_user
-		redirect_to(root_url) unless current_user.admin?
+		redirect_to(users_path) and flash[:danger] = "Only an administator can delete users" unless current_user.admin?
 	end
 
 	def correct_user

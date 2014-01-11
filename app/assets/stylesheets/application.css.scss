@@ -78,6 +78,31 @@ body
 	.sidebar 
 	{
 		padding-right:5px;
+
+		ul.list-group
+		{
+			li.list-group-item
+			{
+				padding:0px;
+				a
+				{
+					padding:10px;
+					display:block;	
+					text-decoration:none;
+					
+				}
+
+				a:visited
+				{
+					color:#333;
+				}
+
+				a:hover
+				{
+					background-color: #CEFCB8
+				}
+			}
+		}
 	}
 
 	.content

@@ -1,7 +1,6 @@
 <ul class="list-group">
-	<li class="list-group-item">Cras justo odio</li>
-	<li class="list-group-item">Dapibus ac facilisis in</li>
-	<li class="list-group-item">Morbi leo risus</li>
-	<li class="list-group-item">Porta ac consectetur ac</li>
-	<li class="list-group-item">Vestibulum at eros</li>
+	<li class="list-group-item"><%= link_to "Activities", sw_interactions_path %></li>
+	<li class="list-group-item"><%= link_to "New Activity", new_sw_interaction_path %></li>
+	<li class="list-group-item"><%= link_to "Change Password/Profile", edit_user_path(current_user) %></li>
+	<li class="list-group-item"><%= link_to 'User Profile', current_user  %> </li>
 </ul>

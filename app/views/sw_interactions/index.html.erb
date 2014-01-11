@@ -1,6 +1,10 @@
 <div class="panel panel-success swListPanel">
 	<div class="panel-heading">
-		<h2>List of all Volunteer hours tracking</h2> 
+		<% if @current_org.nil? %>
+		<h2>List of your Activities</h2> 
+	<% else %>
+		<h2>Activities for the <%= @current_org.name %> Organization </h2>
+	<% end%>
 	</div>
 <table class="table table-hover">
   <thead>
@@ -35,3 +39,7 @@
 <br>
 
 <%= link_to 'Log New Volunteer Activity', new_sw_interaction_path, :class => "btn btn-success", data: { no_turbolink: true } %>
+<% if not @current_org.nil? %>
+
+<%= link_to 'Back to Organizations List', organizations_path, :class => "btn btn-info" %>
+<% end %>

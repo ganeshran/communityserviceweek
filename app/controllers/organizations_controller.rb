@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-	before_action :set_organization, only: [:show, :edit, :destroy]
+	before_action :set_organization, only: [:show, :edit, :update, :destroy]
 	before_action :signed_in_user, only: [:new, :edit, :show, :index]
 	before_action :admin_user, only: [:edit, :new, :destroy]
 	def index
@@ -16,8 +16,8 @@ class OrganizationsController < ApplicationController
 		@organization = Organization.new
 	end
 
-	# POST /sw_interactions
-	# POST /sw_interactions.json
+	# POST organization/
+	# POST /organization.json
 	def create
 		@organization = Organization.new(organization_params)
 
@@ -33,8 +33,23 @@ class OrganizationsController < ApplicationController
 		end
 	end
 
-	# DELETE /sw_interactions/1
-	# DELETE /sw_interactions/1.json
+	# PATCH/PUT /organization/1
+	# PATCH/PUT /organizations/1.json
+	def update
+		respond_to do |format|
+			if @organization.update(organization_params)
+				flash[:success] = "Organization was successfully updated" 
+				format.html { redirect_to @organization}
+				format.json { head :no_content }
+			else
+				format.html { render action: 'edit' }
+				format.json { render json: @organization.errors, status: :unprocessable_entity }
+			end
+		end
+	end
+
+	# DELETE /organization/1
+	# DELETE /organization/1.json
 	def destroy
 		@other_id = Organization.where(:name => 'Other Institutes').first.id
 		@organization.sw_interactions.update_all(:organization_id => @other_id)

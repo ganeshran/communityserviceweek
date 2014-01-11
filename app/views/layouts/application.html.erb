@@ -14,7 +14,7 @@
 	<%= render 'layouts/header' %>
 	<div class="row">
 		<div class="sidebar col-lg-3">
-			<%if @show_sidebar == false %>
+			<%if signed_in? == false or @show_sidebar == false %>
 				<%= render 'layouts/unauthsidebar' %> 
 			<%else%>
 				<%= render 'layouts/sidebar' %> 

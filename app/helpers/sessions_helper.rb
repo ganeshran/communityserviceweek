@@ -34,7 +34,8 @@ module SessionsHelper
 	def signed_in_user
 		unless signed_in?
 			store_location
-			redirect_to signin_url, notice: "Please sign in."
+			flash[:danger] = "This page can only be accessed by signed-in users. Please sign in"
+			redirect_to signin_url
 		end
 	end
 

@@ -1,46 +1,39 @@
-<div class="container">
-	<div class="row">
-		<div class="col-lg-7">
-			<div class="panel panel-success">
-			<div class="panel-heading">
-				Volunteer Activity details
-			</div>
-			<table class="table">
-				<tbody>
-				<tr>
-					<td>Organization Name</td>
-					<td><%= @sw_interaction.organization.name%></td>
-				</tr>
-				<tr>
-					<td>Organization Address</td>
-					<td><%= @sw_interaction.organization.address%></td>
-				</tr>
-				<tr>
-					<td>Organization Phone</td>
-					<td><%= @sw_interaction.organization.phone %></td>
-				</tr>
-				<tr>	<td>Category</td>
-					<td><%= @sw_interaction.category %></td>
-				</tr>
-				<tr>	<td>Volunteer Hours</td>
-					<td><%= @sw_interaction.volunteerHours%></td>
-				</tr>
-				<tr>	<td>From Date</td>
-					<td><%= @sw_interaction.fromactivitydate.strftime('%d/%m/%Y %I:%M %p')%></td>
-				</tr>
-				<tr>	<td>To Date</td>
-					<td><%= @sw_interaction.toactivitydate.strftime('%d/%m/%Y %I:%M %p')%></td>
-				</tr>
-				<tr>	<td>Created By</td>
-					<td><%= @sw_interaction.user.name %></td>
-				</tr>
-				</tbody>
-				</tbody>
-				</tbody>
-			</table>
-		</div>
-		</div>
+<div class="panel panel-success swListPanel">
+	<div class="panel-heading">
+		<h2>Volunteer Activity details</h2> 
+	</div>
+	<div class="panel-body">
+		<table class="table table-hover">
+			<tbody>
+			<tr>
+				<td>Organization Name</td>
+				<td><%= @sw_interaction.organization.name%></td>
+			</tr>
+			<tr>
+				<td>Organization Address</td>
+				<td><%= @sw_interaction.organization.address%></td>
+			</tr>
+			<tr>
+				<td>Organization Phone</td>
+				<td><%= @sw_interaction.organization.phone %></td>
+			</tr>
+			<tr>	<td>Category</td>
+				<td><%= @sw_interaction.category %></td>
+			</tr>
+			<tr>	<td>Volunteer Hours</td>
+				<td><%= @sw_interaction.volunteerHours%></td>
+			</tr>
+			<tr>	<td>From Date</td>
+				<td><%= @sw_interaction.fromactivitydate.strftime('%d/%m/%Y %I:%M %p')%></td>
+			</tr>
+			<tr>	<td>To Date</td>
+				<td><%= @sw_interaction.toactivitydate.strftime('%d/%m/%Y %I:%M %p')%></td>
+			</tr>
+			<tr>	<td>Created By</td>
+				<td><%= @sw_interaction.user.name %></td>
+			</tr>
+			</tbody>
+		</table>
+			<%= link_to 'Back', sw_interactions_path, :class => "btn btn-info",data: { no_turbolink: true } %>
 	</div>
 </div>
-<%= link_to 'Edit', edit_sw_interaction_path(@sw_interaction), :class => "btn btn-warning" %> 
-<%= link_to 'Back', sw_interactions_path, :class => "btn btn-info" %>

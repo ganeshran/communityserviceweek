@@ -1,45 +1,51 @@
 <div class="panel panel-success swListPanel">
 	<div class="panel-heading">
-		<% if @current_org.nil? %>
-		<h2>List of your Activities</h2> 
+		<% if not @current_org.nil? %>
+			<h2>Activities for the <%= @current_org.name %> Organization </h2>
+	<% elsif not @cur_user.nil? %>
+			<h2>Activities for the <%= @cur_user.name %> User </h2>
 	<% else %>
-		<h2>Activities for the <%= @current_org.name %> Organization </h2>
+			<h2>List of your Activities</h2> 
 	<% end%>
 	</div>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Organization</th>
-      <th>Category</th>
-      <th>Volunteer Hours</th>
-      <th>From Date</th>
-      <th>To Date</th>
-      <th>Show</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-  </thead>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Organization</th>
+				<th>Category</th>
+				<th>Volunteer Hours</th>
+				<th>From Date</th>
+				<th>To Date</th>
+				<th>Show</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
 
-  <tbody>
-    <% @sw_interactions.each do |sw_interaction| %>
-      <tr>
-	<td> <%= sw_interaction.organization.name %> </td>
-	<td> <%= sw_interaction.category %> </td>
-	<td> <%= sw_interaction.volunteerHours %> </td>
-	<td> <%= sw_interaction.fromactivitydate.strftime("%m/%d/%Y %I:%M %p") %></td>
-	<td> <%= sw_interaction.toactivitydate.strftime("%m/%d/%Y %I:%M %p") %></td>
-	<td> <%= link_to 'Show', sw_interaction, :class => "btn btn-success", data: { no_turbolink: true } %> </td>
-	<td><%= link_to 'Edit', edit_sw_interaction_path(sw_interaction), :class => "btn btn-warning", data: { no_turbolink: true } %></td>
-	<td><%= link_to 'Delete', sw_interaction, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+		<tbody>
+		<% @sw_interactions.each do |sw_interaction| %>
+			<tr>
+			<td> <%= sw_interaction.organization.name %> </td>
+			<td> <%= sw_interaction.category %> </td>
+			<td> <%= sw_interaction.volunteerHours %> </td>
+			<td> <%= sw_interaction.fromactivitydate.strftime("%m/%d/%Y %I:%M %p") %></td>
+			<td> <%= sw_interaction.toactivitydate.strftime("%m/%d/%Y %I:%M %p") %></td>
+			<td> <%= link_to 'Show', sw_interaction, :class => "btn btn-success", data: { no_turbolink: true } %> </td>
+			<td><%= link_to 'Edit', edit_sw_interaction_path(sw_interaction), :class => "btn btn-warning", data: { no_turbolink: true } %></td>
+			<td><%= link_to 'Delete', sw_interaction, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+		</tr>
+	<% end %>
+		</tbody>
+	</table>
 </div>
 <br>
 
 <%= link_to 'Log New Volunteer Activity', new_sw_interaction_path, :class => "btn btn-success", data: { no_turbolink: true } %>
 <% if not @current_org.nil? %>
 
-<%= link_to 'Back to Organizations List', organizations_path, :class => "btn btn-info" %>
+	<%= link_to 'Back to Organizations List', organizations_path, :class => "btn btn-info" %>
 <% end %>
+<% if not @cur_user.nil? %>
+	<%= link_to 'Back to Users List',users_path , :class => "btn btn-info" %>
+
+<%end %>

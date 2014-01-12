@@ -8,6 +8,9 @@ Crimsonserviceweek::Application.routes.draw do
 	resources :organizations do
 		resources	:sw_interactions, only: [:index]
 	end
+	resources :users do
+		resources	:sw_interactions, only: [:index]
+	end
 	resources :sessions, only: [:new, :create, :destroy]
 
 	get "home/index"

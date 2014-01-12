@@ -2,20 +2,30 @@ class SwInteractionsController < ApplicationController
 	before_action :set_sw_interaction, only: [:show]
 	before_action :correct_user, only:  [:edit, :update, :destroy]
 	before_action :signed_in_user, only: [:new, :edit, :update, :index]
+	before_action :fix_date_formats, only: [:create, :update]
 
 	# GET /sw_interactions
 	# GET /sw_interactions.json
 	def index
-		if params[:organization_id].nil?
-			@sw_interactions = current_user.sw_interactions.all
-		else
+		if not  params[:organization_id].nil?
 			@current_org = Organization.where(:id => params[:organization_id]).first
 			if @current_org.nil?
-				flash[:danger] = "This organization was not found. Redirecting to your activities"
+				flash[:danger] = "This organization was not found. Redirecting to your activities page"
 				redirect_to sw_interactions_path 
 			else
 				@sw_interactions = @current_org.sw_interactions.all
 			end
+
+		elsif not params[:user_id].nil?
+			@cur_user = User.where(:id => params[:user_id]).first
+			if @cur_user.nil?
+				flash[:danger] = "This user was not found. Redirecting to your activities page"
+				redirect_to sw_interactions_path
+			else
+				@sw_interactions = @cur_user.sw_interactions.all
+			end
+		else		
+			@sw_interactions = current_user.sw_interactions.all
 		end
 	end
 
@@ -37,6 +47,7 @@ class SwInteractionsController < ApplicationController
 	# POST /sw_interactions.json
 	def create
 		puts sw_interaction_params.inspect
+		puts sw_interaction_params[:fromactivitydate]
 		@sw_interaction = current_user.sw_interactions.build(sw_interaction_params)
 		#		@sw_interaction = SwInteraction.new(sw_interaction_params)
 
@@ -89,6 +100,11 @@ class SwInteractionsController < ApplicationController
 	end
 
 	private
+	def fix_date_formats
+		params[:sw_interaction][:fromactivitydate] = DateTime.strptime(params[:sw_interaction][:fromactivitydate],"%m/%d/%Y %I:%M %p").to_s if params[:sw_interaction][:fromactivitydate].present?
+		params[:sw_interaction][:toactivitydate] = DateTime.strptime(params[:sw_interaction][:toactivitydate] ,"%m/%d/%Y %I:%M %p").to_s if params[:sw_interaction][:toactivitydate].present?
+	end
+
 	def sw_interaction_params
 		params.require(:sw_interaction).permit(:organization_id, :volunteerHours, :category, :fromactivitydate, :toactivitydate)
 	end

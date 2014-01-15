@@ -1,12 +1,20 @@
 <div class="home panel panel-success">
 	<div class="panel-heading"><h2>ABCO India community impact service hours tracker</h2></div>
 	<div class="panel-body">
-		<p><h4>Community Impact is ABCO Advisory Services India's corporate social responsibility program. Our employees’ commitment to quality health care and education goes beyond their day jobs. We use our skills and passions to transform the communities in which we live and work—through firm wide events, hands-on activities, pro bono projects, and board service.</h4>
-		<br />
-		<% if not signed_in? %>
-			<h4>Please sign-in or register to continue</h4>
-	<%end %>
-		</p>	
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="imgholder">
+					<%= image_tag 'img_1911.jpg', :alt => 'Community Service Week Activity' %>
+				</div>
+				<p><h4>Community Impact is ABCO Advisory Services India's corporate social responsibility program. Our employees’ commitment to quality health care and education goes beyond their day jobs. We use our skills and passions to transform the communities in which we live and work—through firm wide events, hands-on activities, pro bono projects, and board service.</h4>
+				<br />
+				<% if not signed_in? %>
+					<h4>Please sign-in or register to continue</h4>
+			<%end %>
+
+				</p>	
+			</div>
+		</div>
 
 	</div>
 </div>

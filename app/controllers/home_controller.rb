@@ -4,4 +4,7 @@ class HomeController < ApplicationController
 
   def gallery
   end
+
+  def testimonials
+  end
 end

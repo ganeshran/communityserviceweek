@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140109210400) do
+ActiveRecord::Schema.define(version: 20140129161148) do
 
   create_table "organizations", force: true do |t|
     t.string "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140109210400) do
     t.integer  "user_id"
     t.datetime "toactivitydate"
     t.integer  "organization_id"
+    t.text     "comment"
   end
 
   add_index "sw_interactions", ["organization_id"], name: "index_sw_interactions_on_organization_id"

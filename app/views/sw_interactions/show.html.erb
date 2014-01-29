@@ -29,6 +29,9 @@
 			<tr>	<td>To Date</td>
 				<td><%= @sw_interaction.toactivitydate.strftime('%d/%m/%Y %I:%M %p')%></td>
 			</tr>
+			<tr>	<td>Comment</td>
+				<td><%= @sw_interaction.comment %></td>
+			</tr>
 			<tr>	<td>Created By</td>
 				<td><%= @sw_interaction.user.name %></td>
 			</tr>

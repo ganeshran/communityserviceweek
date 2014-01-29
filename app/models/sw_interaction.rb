@@ -5,6 +5,7 @@ class SwInteraction < ActiveRecord::Base
 	validates :organization_id, presence:true
 	validates :volunteerHours, presence: true, numericality: true
 	validate :start_must_be_before_end_time
+	validates :comment, length: {maximum:200}
 
 	private 
 	def start_must_be_before_end_time

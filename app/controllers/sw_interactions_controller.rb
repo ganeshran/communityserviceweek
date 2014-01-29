@@ -106,7 +106,7 @@ class SwInteractionsController < ApplicationController
 	end
 
 	def sw_interaction_params
-		params.require(:sw_interaction).permit(:organization_id, :volunteerHours, :category, :fromactivitydate, :toactivitydate)
+		params.require(:sw_interaction).permit(:organization_id, :volunteerHours, :category, :fromactivitydate, :toactivitydate, :comment)
 	end
 
 	def signed_in_user

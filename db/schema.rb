@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140129161148) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "organizations", force: true do |t|
     t.string "name"
     t.string "address"
@@ -31,8 +34,8 @@ ActiveRecord::Schema.define(version: 20140129161148) do
     t.text     "comment"
   end
 
-  add_index "sw_interactions", ["organization_id"], name: "index_sw_interactions_on_organization_id"
-  add_index "sw_interactions", ["user_id", "created_at"], name: "index_sw_interactions_on_user_id_and_created_at"
+  add_index "sw_interactions", ["organization_id"], name: "index_sw_interactions_on_organization_id", using: :btree
+  add_index "sw_interactions", ["user_id", "created_at"], name: "index_sw_interactions_on_user_id_and_created_at", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -44,6 +47,6 @@ ActiveRecord::Schema.define(version: 20140129161148) do
     t.boolean  "admin",           default: false
   end
 
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

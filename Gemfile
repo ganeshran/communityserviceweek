@@ -5,10 +5,13 @@ gem 'rails', '4.0.1'
 
 
 group :development, :test do
-	  gem 'sqlite3'
+	gem 'capistrano'
+	gem 'capistrano-bundler'
+	gem 'capistrano-rvm'
+	gem 'sqlite3'
 end
 group :production do
-	  gem 'pg'
+	gem 'pg'
 end
 
 # Use SCSS for stylesheets
@@ -52,3 +55,5 @@ gem 'rails_12factor', group: :production
 
 # gem 'debugger', group: [:development, :test]
 ruby "1.9.3"
+
+gem 'rack-cas'

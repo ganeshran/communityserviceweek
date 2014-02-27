@@ -8,7 +8,7 @@ group :development, :test do
 	gem 'capistrano'
 	gem 'capistrano-bundler'
 	gem 'capistrano-rvm'
-	get 'capistrano-rails'
+	gem 'capistrano-rails'
 	gem 'sqlite3'
 end
 group :production do

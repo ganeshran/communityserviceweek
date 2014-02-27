@@ -1,6 +1,6 @@
 lock '3.1.0'
 
-set :application, 'cdmrails'
+set :application, 'csrails'
 set :repo_url, 'git@bitbucket.org:ganeshran/csrails.git'
 
 # Default branch is :master
@@ -9,7 +9,8 @@ set :repo_url, 'git@bitbucket.org:ganeshran/csrails.git'
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/var/www/apps/csrails'
 
-set :ssh_options, { :forward_agent => true }
+#set :ssh_options, { :forward_agent => true }
+
 
 
 
@@ -19,7 +20,7 @@ set :rails_env, "production"
 # Default value for :scm is :git
 set :scm, :git
 
-server "172.16.10.38", user: "ganeshr@abcoind.local", roles: [:app, :web, :db, :primary]
+server "abcoindiacommunityimpact.abcoind.local", user: "ganeshr@abcoind.local", roles: [:app, :web, :db, :primary]
 
 # Default value for :format is :pretty
 # set :format, :pretty

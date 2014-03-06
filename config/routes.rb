@@ -17,6 +17,7 @@ Crimsonserviceweek::Application.routes.draw do
 	get "home/gallery"
 	get "home/testimonials"
 	get "home/events"
+	get "home/faq"
 	root to: "home#index"
 	match '/signup',  to: 'users#new',            via: 'get'
 	match '/signin',  to: 'sessions#new',         via: 'get'

@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-	before_action :signed_in_user, only: [:gallery , :testimonials ]
+	before_action :signed_in_user, only: [:events, :gallery , :testimonials ]
 	def index
 	end
 
@@ -10,5 +10,8 @@ class HomeController < ApplicationController
 	end
 
 	def faq
+	end
+
+	def events
 	end
 end

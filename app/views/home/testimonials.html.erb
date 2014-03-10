@@ -1,26 +1,44 @@
 <div class="home panel panel-success swListPanel">
 	<div class="panel-heading"><h2>ABCO India Community Impact Testimonials</h2></div>
 	<div class="panel-body">
+		<p class="lead">Please click on the name to read the testimonials</p>
 		<% @testimonials.each do |testimonial| %>
 			<div class="row">
 			<div class="col-lg-12">
-				<p><h3><%= testimonial.author %></h3></p>
-				<div class="picture">
-					<div class="col-lg-4 col-lg-offset-4" >
-						<% if not testimonial.imagefile.blank? %>
-							<%= image_tag(testimonial.imagefile) %>
-					<% end %>
-					</div>
-				</div>
-				<div class="desc">
-					<div class="col-lg-12">
-						<%=raw testimonial.story %>
-					</div>
-				</div>
+				<div class="panel-group" id="accordion">
+					<!-- First Panel -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title"
+								data-toggle="collapse" 
+								data-target="#<%= testimonial.id %>">
+								<%= testimonial.author %>
+							</h4>
+						</div>
+						<div id="<%= testimonial.id %>" class="panel-collapse collapse">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-lg-4 col-lg-offset-4" >
+										<div class="picture">
+											<% if not testimonial.imagefile.blank? %>
+												<%= image_tag(testimonial.imagefile) %>
+										<% end %>
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="desc">
+											<%=raw testimonial.story %>
+										</div>
+									</div>
+								</div>
 
-			<%end %>
+							</div>
+						</div>
+					</div>
+				</div>
 
 			</div>
 		</div>
+	<%end %>
 	</div>
 </div>

@@ -9,11 +9,15 @@
 					<!-- First Panel -->
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h4 class="panel-title"
+
+							<h3 class="panel-title"
 								data-toggle="collapse" 
 								data-target="#<%= testimonial.id %>">
-								<%= testimonial.author %>
-							</h4>
+							<% if not testimonial.imagefile.blank? %>
+								<%= image_tag(testimonial.imagefile,height: '40', width: '30') %>
+						<% end %>
+						<span class="author"><%= testimonial.author %></span>
+							</h3>
 						</div>
 						<div id="<%= testimonial.id %>" class="panel-collapse collapse">
 							<div class="panel-body">

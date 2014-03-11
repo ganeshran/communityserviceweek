@@ -21,6 +21,7 @@ namespace :csrails do
 		)
 		Testimonial.create(
 			:author => 'Biju Mani',
+			:imagefile => 'img_biju.jpg',
 			:story => "<p>I am a part of the ABCO community Impact service team for the past two years. I get involved in Community Impact service out of my own personal interest. Our service may or may not bring major change in the lives of the people whom we serve but I am sure that every small involvement counts. I am happy that we are able to bring some smile in the face of the struggling people as a team.</p>"
 		)
 	end

@@ -26,7 +26,7 @@
 			</div>
 			<div class="form-group">
 				<%= label_tag(:category, "Hands-on/Pro Bono") %> 
-				<%= f.select(:category,options_for_select([ "Hands-on", "Pro-bono" ], @sw_interaction.category ) ,{}, {:class => "form-control"}) %>
+				<%= f.select(:category,options_for_select([ "Hands-on", "Pro-bono","Free Meal Program","Books Donation","Medical Check up","Sapling","Kids Day out Program","Fun Events for Kids","Stalls","Coastal lean Up Program","Clothes Drive" ], @sw_interaction.category ) ,{}, {:class => "form-control"}) %>
 			</div>
 			<div class="form-group">
 				<%= label_tag(:volunteerHours, "Volunteer Hours") %> 

@@ -1,4 +1,33 @@
 <% provide(:title, "Sign in") %>
+<div class="box-section unik-line-head unik-line-section">
+  <p><span>Sign In</span></p>
+</div>
+
+<div class="box-section contact-section">
+	<form id="contact-form" action="/sessions" method="post">
+		<div class="text-fields">
+			<div class="float-input">
+				<input name="session[email]" id="email" type="text" placeholder="E-Mail ID">
+				<span><i class="fa fa-user"></i></span>
+			</div>
+			<div class="float-input">
+				<input name="session[password]" id="password" type="password" placeholder="Password">
+				<span><i class="fa fa-lock"></i></span>
+			</div>
+		</div>
+		<div class="text-fields">
+			<button type="submit" name="commit" id="submit_contact">
+				<i class="fa fa-sign-in"></i>Sign-In
+			</button>
+
+			<button type="submit" name="contact-submit" id="submit_contact" class="register">
+				<i class="fa fa-pencil-square-o"></i>Register
+			</button>
+		</div>
+		<div id="msg" class="message"></div>
+	</form>
+</div>
+
 <div class="panel panel-success swListPanel">
 	<div class="panel-heading">
 		<h2>Sign In</h2> 
@@ -7,8 +36,8 @@
 		<div class="row">
 			<div class="col-lg-5">
 				<%= form_for(:session, url: sessions_path) do |f| %>
-					<div class="form-group">
-					<%= f.label :email %>
+					<div class="form-group float-input">
+					<%= f.span :email %>
 					<%= f.text_field :email, :class => "form-control"%>
 				</div>
 				<div class="form-group">

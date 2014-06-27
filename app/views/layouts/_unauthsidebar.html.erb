@@ -1,5 +1,17 @@
-<ul class="list-group">
-	<li class="list-group-item"><%= link_to "Sign in", signin_path %></li>
-	<li class="list-group-item"><%= link_to "Register!", new_user_path%></li>
-	<li class="list-group-item"><%= link_to 'FAQs', controller: "home", action: "faq" %> </li>
-</ul>
+<div id="sidebar">
+	<!-- header -->
+	<header class="sidebar-section">
+		<div class="header-logo">
+			<img src="/assets/CIlogo.png" />
+		</div>
+		<a class="elemadded responsive-link" href="##">Menu</a>
+		<div class="navbar-vertical">
+			<ul class="main-menu">
+				<li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+				<li><a href="<%=signin_path%>"><i class="fa fa-user"></i>Sign-In</a></li>
+				<li><a href="<%=new_user_path%>"><i class="fa fa-pencil-square-o"></i>Register</a></li>
+				<li><a href="/home/faq"><i class="fa fa-question"></i>FAQs</a></li>
+			</ul>
+		</div>
+	</header>
+</div>

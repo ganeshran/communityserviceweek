@@ -42,7 +42,12 @@
 
 		<div class="text-fields">
 			 <%= button_tag(type: 'submit') do %>
-				<i class="fa fa-pencil-square-o"></i>Sign Up 
+				 <i class="fa fa-pencil-square-o"></i>
+				 <% if @user.new_record? %>
+			 	Sign Up 
+			<% else %>
+					Edit Profile
+				<% end %>
 			 <% end %>
 
 			 <%= link_to @user, :class => 'register' do %>

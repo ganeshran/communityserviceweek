@@ -1,13 +1,24 @@
-<ul class="list-group">
-	<li class="list-group-item"><%= link_to "Activities", sw_interactions_path %></li>
-	<li class="list-group-item"><%= link_to "New Activity", new_sw_interaction_path %></li>
-	<li class="list-group-item"><%= link_to "Upcoming Events/News", controller: "home", action: "events" %></li>
-	<li class="list-group-item"><%= link_to "Registered NGOs", organizations_path%></li>
-	<% if current_user.admin? %>
-	<li class="list-group-item"><%= link_to "New Organization", new_organization_path%></li>
-<%end%>
-	<li class="list-group-item"><%= link_to "Registered Users", users_path%></li>
-	<li class="list-group-item"><%= link_to 'Gallery', controller: "home", action: "gallery" %> </li>
-	<li class="list-group-item"><%= link_to 'FAQs', controller: "home", action: "faq" %> </li>
-	<li class="list-group-item"><%= link_to 'Testimonials/Impact Stories', controller: "home", action: "testimonials" %></li>
-</ul>
+<div id="sidebar">
+	<!-- header -->
+	<header class="sidebar-section">
+		<div class="header-logo">
+			<img src="/assets/CIlogo.png" />
+		</div>
+		<a class="elemadded responsive-link" href="##">Menu</a>
+		<div class="navbar-vertical">
+			<ul class="main-menu">
+				<li><%= link_to "Activities", sw_interactions_path %></li>
+				<li><%= link_to "New Activity", new_sw_interaction_path %></li>
+				<li><%= link_to "Upcoming Events/News", controller: "home", action: "events" %></li>
+				<li><%= link_to "Registered NGOs", organizations_path%></li>
+				<% if current_user.admin? %>
+					<li><%= link_to "New Organization", new_organization_path%></li>
+				<%end%>
+				<li><%= link_to "Registered Users", users_path%></li>
+				<li><%= link_to 'Gallery', controller: "home", action: "gallery" %> </li>
+				<li><%= link_to 'FAQs', controller: "home", action: "faq" %> </li>
+				<li><%= link_to 'Testimonials/Impact Stories', controller: "home", action: "testimonials" %></li>
+			</ul>
+		</div>
+	</header>
+</div>

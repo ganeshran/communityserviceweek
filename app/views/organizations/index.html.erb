@@ -1,34 +1,42 @@
-<div class="panel panel-success swListPanel">
-	<div class="panel-heading">
-		<h2>List of all Organizations</h2> 
-	</div>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Organization Name</th>
-      <th>Address</th>
-      <th>Phone Number</th>
-      <th>Activities</th>
-      <th>Show</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-  </thead>
+<div class="box-section table-section triggerAnimation animated fadeInUpBig" data-animate="fadeInUpBig">
+  <h2>List of all Organizations</h2> 
 
-  <tbody>
-    <% @organizations.each do |organization| %>
-      <tr>
-	<td> <%= organization.name %> </td>
-	<td> <%= organization.address%> </td>
-	<td> <%= organization.phone%> </td>
-	<td> <%= link_to 'Activities', organization_sw_interactions_path(organization), :class => "btn btn-primary", data: { no_turbolink: true } %> </td>
-	<td> <%= link_to 'Show', organization, :class => "btn btn-success", data: { no_turbolink: true } %> </td>
-	<td><%= link_to 'Edit', edit_organization_path(organization), :class => "btn btn-warning", data: { no_turbolink: true } %></td>
-	<td><%= link_to 'Delete', organization, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Organization Name</th>
+          <th>Address</th>
+          <th>Phone Number</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <% @organizations.each do |organization| %>
+          <tr>
+            <td> <%= organization.name %> </td>
+            <td> <%= organization.address%> </td>
+            <td> <%= organization.phone%> </td>
+            <td class="action-section last">
+              <ul class="feature-list">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-cog"></i>
+                  </a>
+
+                  <ul class="dropdown-menu pull-right">
+                    <li> <%= link_to 'Activities', organization_sw_interactions_path(organization), data: { no_turbolink: true } %> </li>
+                    <li> <%= link_to 'Show', organization, data: { no_turbolink: true } %> </li>
+                    <li><%= link_to 'Edit', edit_organization_path(organization), data: { no_turbolink: true } %></li>
+                    <li><%= link_to 'Delete', organization, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
-<br>
-

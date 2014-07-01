@@ -58,7 +58,7 @@ html[xmlns] .slides {display: block;}
 /* Direction Nav */
 
 .flex-direction-nav {
-	width: 151px; 
+	width: 101px; 
 	height: 75px; 
 	display: inline-block; 
 	position: absolute; 
@@ -77,8 +77,8 @@ html[xmlns] .slides {display: block;}
 .flex-direction-nav .flex-next {
 	display: inline-block;
 	position: relative;
-	width: 75px; 
-	height: 75px;
+	width: 50px; 
+	height: 50px;
 	float: right;
 	transition: all 0.2s linear;
 	-moz-transition: all 0.2s linear;
@@ -94,7 +94,7 @@ html[xmlns] .slides {display: block;}
     font-family: 'FontAwesome';
     font-size: 32px;
 	color: #fff;
-	line-height: 75px;
+	line-height: 50px;
 	width: 100%;
 	text-align: center;
 	text-indent: 0 !important;
@@ -103,8 +103,8 @@ html[xmlns] .slides {display: block;}
 .flex-direction-nav .flex-prev {
 	position: relative;
 	display: inline-block;
-	width: 75px; 
-	height: 75px;
+	width: 50px; 
+	height: 50px;
 	float: left;
 	transition: all 0.2s linear;
 	-moz-transition: all 0.2s linear;
@@ -120,7 +120,7 @@ html[xmlns] .slides {display: block;}
     font-family: 'FontAwesome';
     font-size: 32px;
 	color: #fff;
-	line-height: 75px;
+	line-height: 50px;
 	width: 100%;
 	text-align: center;
 	text-indent: 0 !important;

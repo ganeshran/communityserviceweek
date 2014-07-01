@@ -1,55 +1,64 @@
-<%= form_for(@sw_interaction) do |f| %>
-
-	<div class="actions container">
-	<div class="row">
+<div class="container">
+	
+	<%= form_for(@sw_interaction, :html => {:class => "ci-form"}) do |f| %>
 		<div class="col-lg-7">
 			<% if @sw_interaction.errors.any? %>
 				<div class="errorPanel panel panel-danger">
-				<div class="panel-heading">	<h4><%= pluralize(@sw_interaction.errors.count, "error") %> prevented this Activity from being saved:</h4>
+					<div class="panel-heading">	<h4><%= pluralize(@sw_interaction.errors.count, "error") %> prevented this Activity from being saved:</h4>
+					</div>
+
+					<ul class="list-group">
+						<% @sw_interaction.errors.full_messages.each do |msg| %>
+							<li class="list-group-item"><%= msg %></li>
+					<% end %>
+					</ul>
 				</div>
-
-				<ul class="list-group">
-					<% @sw_interaction.errors.full_messages.each do |msg| %>
-						<li class="list-group-item"><%= msg %></li>
-				<% end %>
-				</ul>
-			</div>
-		<% end %>
+			<% end %>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-7">
-			<div class="form-group">
-				<%= label_tag(:organization, "Organization") %>
-				<%= f.collection_select(:organization_id, Organization.all,:id,:name,{:prompt => true},{:class=>'form-control'}) %>
 
+		<div class="text-fields">
+			<div class="float-input">
+				<%= f.collection_select(:organization_id, Organization.all,:id,:name, {:prompt => true}) %>
+				<span><i class="fa fa-home"></i></span>
 			</div>
-			<div class="form-group">
-				<%= label_tag(:category, "Category") %> 
-				<%= f.select(:category,options_for_select([ "Hands-on", "Pro-bono","Free Meal Program","Books Donation","Medical Check up","Sapling","Kids Day out Program","Fun Events for Kids","Stalls","Coastal Clean Up Program","Clothes Drive" ], @sw_interaction.category ) ,{}, {:class => "form-control"}) %>
+			<div class="float-input">
+				<%= f.select(:category,options_for_select([ "Select Category","Hands-on", "Pro-bono","Free Meal Program","Books Donation","Medical Check up","Sapling","Kids Day out Program","Fun Events for Kids","Stalls","Coastal Clean Up Program","Clothes Drive" ], @sw_interaction.category ) ,{}) %>
+				<span><i class="fa fa-list-ul"></i></span>
 			</div>
-			<div class="form-group">
-				<%= label_tag(:volunteerHours, "Volunteer Hours") %> 
-				<%= f.text_field(:volunteerHours,{:class => "form-control"}) %>
+			<div class="float-input">
+				<%= f.text_field(:volunteerHours,  placeholder: 'Volunteer Hours') %>
+				<span><i class="fa fa-clock-o"></i></span>
 			</div>
-			<div class="form-group">
-				<%= label_tag(:fromactivitydate, "From Date") %> 
-				<%= f.text_field(:fromactivitydate, :value => @sw_interaction.fromactivitydate.nil? ? nil : @sw_interaction.fromactivitydate.strftime("%m/%d/%Y %I:%M %p"), :class => "form-control activitydate") %>
+			<div class="float-input">
+				<%= f.text_field(:fromactivitydate, :value => @sw_interaction.fromactivitydate.nil? ? nil : @sw_interaction.fromactivitydate.strftime("%m/%d/%Y %I:%M %p"), placeholder: 'From Date') %>
+				<span><i class="fa fa-calendar"></i></span>
 			</div>
-			<div class="form-group">
-				<%= label_tag(:toactivitydate, "To Date") %> 
-				<%= f.text_field(:toactivitydate,:value =>  @sw_interaction.toactivitydate.nil? ? nil : @sw_interaction.toactivitydate.strftime("%m/%d/%Y %I:%M %p"), :class => "form-control activitydate") %>
+			<div class="float-input">
+				<%= f.text_field(:toactivitydate,:value =>  @sw_interaction.toactivitydate.nil? ? nil : @sw_interaction.toactivitydate.strftime("%m/%d/%Y %I:%M %p"), placeholder: 'To Date') %>
+				<span><i class="fa fa-calendar"></i></span>
 			</div>
-<div class="form-group">
-				<%= label_tag(:comment, "Comment (optional)") %> 
-				<%= f.text_area(:comment,:class => "form-control") %>
+			<div class="float-input comment-txt">
+				<%= f.text_area(:comment, placeholder: 'Comments (Optional)') %>
+				<span><i class="fa fa-comment"></i></span>
 			</div>
-			<%if @sw_interaction.new_record? %>
-				<%= f.submit 'Log New Activity', :class=> "btn btn-success"%>
-			<%else%>
-				<%= f.submit 'Edit Activity', :class=> "btn btn-success"%> 
-			<%end%>
-			<%= link_to 'Back', sw_interactions_path, :class => "btn btn-info",data: { no_turbolink: true } %>
-	</div>
+		</div>
+
+		<div class="text-fields">
+			 <%if @sw_interaction.new_record? %>
+				 <%= button_tag(type: 'submit') do %>
+					<i class="fa fa-plus"></i>Log New Activity
+				 <% end %>
+			 <% else %>
+				 <%= button_tag(type: 'submit') do %>
+					<i class="fa fa-edit"></i>Edit Activity
+				 <% end %>
+			 <% end %>
+
+			 <%= link_to sw_interactions_path, :class => 'register' do %>
+				<i class="fa fa-arrow-left"></i>Back
+	         <% end %>
+		</div>
+
+		<div id="msg" class="message"></div>
+	<% end %>
 </div>
-<% end %>

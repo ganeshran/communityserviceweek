@@ -13,20 +13,21 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300italic,300,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 <%= stylesheet_link_tag    "application", media: "all" %>
-<%= javascript_include_tag "application" %>
 <%= csrf_meta_tags %>
 </head>
 <body>
 	<div id="main-header">
-		<div class="container">
+		<div class="container" style="position:relative;">
 			<img src="/assets/abcoLogo.png" />
-		</div>				
+
+			<%= render 'layouts/header' %>
+		</div>
 	</div>
 <% flash.each do |key, value| %>
 	<div class="alert alert-<%= key %>"><p><strong><%= value %></strong></p></div>
 	      <% end %>
 <div id="container" class="container">
-	<%= render 'layouts/header' %>
+	
 	<div class="row">
 		<div class="sidebar col-lg-3">
 			<%if signed_in? == false or @show_sidebar == false %>
@@ -40,5 +41,6 @@
 		</div>
 	</div>
 </div>
+<%= javascript_include_tag "application" %>
 </body>
 </html>

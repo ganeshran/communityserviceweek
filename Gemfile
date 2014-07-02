@@ -58,3 +58,5 @@ gem 'rails_12factor', group: :production
 ruby "1.9.3"
 
 gem 'rack-cas'
+
+gem 'active_link_to'

@@ -1,6 +1,5 @@
 /*jshint jquery:true */
 /*global $:true */
-
 var $ = jQuery.noConflict();
 
 $(document).ready(function($) {
@@ -10,6 +9,12 @@ $(document).ready(function($) {
 	/*-------------------------------------------------*/
 	/* =  portfolio isotope
 	/*-------------------------------------------------*/
+	$('.flexslider').flexslider({
+		animation: "slide",
+		start: function(slider){
+		  $('body').removeClass('loading');
+		}
+		});
 	var winDow = $(window);
 		// Needed variables
 		var $container=$('.portfolio-box');
@@ -113,7 +118,7 @@ $(document).ready(function($) {
 
 	/*-------------------------------------------------*/
 	/* =  flexslider
-	/*-------------------------------------------------*/
+	/*-------------------------------------------------*
 	try {
 		var SliderPost = $('.flexslider');
 

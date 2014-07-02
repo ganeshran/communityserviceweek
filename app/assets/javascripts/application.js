@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require moment.min
-//= require jquery.flexslider
 //= require_tree .
 $('document').ready(function(){
 $('.alert').delay(3000).fadeOut("slow");

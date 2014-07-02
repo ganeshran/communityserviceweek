@@ -10,7 +10,6 @@ $(document).ready(function($) {
 	/*-------------------------------------------------*/
 	/* =  portfolio isotope
 	/*-------------------------------------------------*/
-
 	var winDow = $(window);
 		// Needed variables
 		var $container=$('.portfolio-box');

@@ -62,8 +62,8 @@ html[xmlns] .slides {display: block;}
 	height: 75px; 
 	display: inline-block; 
 	position: absolute; 
-	bottom: -22px;
-	right:0;
+	bottom: -25px;
+	right: 1px;
 	opacity: 1;
 	cursor: pointer;
 	z-index: 3;

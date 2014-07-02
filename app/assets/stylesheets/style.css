@@ -18,7 +18,7 @@
 -------------------------------------------------*/
 
 /*-------------------------------------------------------*/
-/* 1. Isotope filtering
+/* 1. Isotope filtering *8ab928 ad2100*  
 /*-------------------------------------------------------*/
 .isotope-item {
   z-index: 2;
@@ -52,7 +52,7 @@ html {
 }
 body {
   min-height: 100%;
-  background: #d9dcd7;
+  background: #f0f0f0 url('/assets/noise-grey.png');
 }
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
@@ -2825,6 +2825,10 @@ footer .footer-line a, .go-top {
   color: #ffffff;
   line-height: 35px;
 }
+footer .footer-line a:hover , .go-top:hover {
+  background: #8ab928;
+    opacity: 0.8;
+}
 footer .footer-line a i {
   font-size: 26px;
   color: #ffffff;
@@ -3158,6 +3162,7 @@ footer .footer-line a:hover {
 
 .bluebtnlink:hover { 
   text-decoration: none;
+  background: #1375d8;
   opacity: 0.8;
 }
 
@@ -3173,6 +3178,16 @@ footer .footer-line a:hover {
 }
 
 .defaultgreen {
+  background: #8ab928;
+}
+
+.lightblue:hover {
+  opacity: 0.8;
+  background: #5bc0de;
+}
+
+.defaultgreen:hover {
+  opacity: 0.8;
   background: #8ab928;
 }
 
@@ -3226,4 +3241,8 @@ select span i {
 
 .col-md-9 li {
   padding: 12px 0 !important;
+}
+
+#main-header a:hover, .header-logo a:hover {
+  background: none;
 }

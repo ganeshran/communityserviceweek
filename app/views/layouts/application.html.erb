@@ -18,7 +18,9 @@
 <body>
 	<div id="main-header">
 		<div class="container" style="position:relative;">
-			<img src="/assets/abcoLogo.png" />
+			<%= link_to controller: "home", action: "index" do %>
+				<%=image_tag('abcoLogo.png') %>		
+			<% end %>
 
 			<%= render 'layouts/header' %>
 		</div>

@@ -52,7 +52,7 @@ html {
 }
 body {
   min-height: 100%;
-  background: #f0f0f0 url('/assets/noise-grey.png');
+  background: #f0f0f0 url('/assets/noise.png');
 }
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
@@ -1249,6 +1249,10 @@ p.flex-caption {
 .accord-elem.active a.accord-link:after {
   content: '\f056';
   opacity: 1;
+}
+#test-slider .accord-title a.accord-link:after {
+  content: '';
+  line-height: 25px;
 }
 .accord-content {
   display: none;
@@ -3245,4 +3249,15 @@ select span i {
 
 #main-header a:hover, .header-logo a:hover {
   background: none;
+}
+
+.cont-box blockquote { 
+  margin: 20px 0 0 70px;
+}
+
+.cont-box p {
+  padding: 10px 0;
+}
+.cont-box blockquote p { 
+  padding: 0;
 }

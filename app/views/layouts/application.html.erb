@@ -30,18 +30,18 @@
 	      <% end %>
 <div id="container" class="container">
 	
-	<div class="row">
-		<div class="sidebar col-lg-3">
-			<%if signed_in? == false or @show_sidebar == false %>
-				<%= render 'layouts/unauthsidebar' %> 
-			<%else%>
-				<%= render 'layouts/sidebar' %> 
-			<%end%>
-		</div>
-		<div id="content">
-			<%= yield %>
-		</div>
+	
+	<div class="sidebar">
+		<%if signed_in? == false or @show_sidebar == false %>
+			<%= render 'layouts/unauthsidebar' %> 
+		<%else%>
+			<%= render 'layouts/sidebar' %> 
+		<%end%>
 	</div>
+	<div id="content">
+		<%= yield %>
+	</div>
+	
 </div>
 <%= javascript_include_tag "application" %>
 </body>

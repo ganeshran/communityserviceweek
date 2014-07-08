@@ -6,12 +6,14 @@ $(document).ready(function($) {
 	"use strict";
   /* global DevSolutionSkill: false */ 
   	$('#fromdate').datetimepicker({
-  		format:'m/d/Y H:i a',
+  		format:'m/d/Y h:i a',
+  		formatTime:'h:i a',
   		timepicker: true,
   		maxDate: 0
     });
   	$('#todate').datetimepicker({
-  		format:'m/d/Y H:i a',
+  		format:'m/d/Y h:i a',
+  		formatTime:'h:i a',
       	timepicker: true,
       	maxDate: 0
     });

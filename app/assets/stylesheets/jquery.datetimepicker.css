@@ -7,10 +7,8 @@
 	border-top: 1px solid #CCCCCC;
 	color: #333333;
 	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	padding: 12px;
-	padding-left: 0px;
-	padding-top: 2px;
-	margin-left: 8px;
+	padding: 2px 4px 12px 0px;
+	margin-left: 4px;
 	position: absolute;
 	z-index: 9999;
 	-moz-box-sizing: border-box;
@@ -66,7 +64,7 @@
 	margin-left:8px;
 }
 .xdsoft_datetimepicker  .xdsoft_timepicker{
-	width: 58px;
+	width: 70px;
 	float:left;
 	text-align:center;
 	margin-left:8px;

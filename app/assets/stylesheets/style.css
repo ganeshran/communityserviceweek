@@ -1318,8 +1318,9 @@ p.flex-caption {
   border-bottom: 1px solid #eeeeee;
   min-height: 45px;
 }
-.fontawesome-section ul.icon-list li.address {
-  height: 60px;
+.fontawesome-section ul.icon-list li.brow {
+  height: 100px;
+  overflow-y: auto;
 }
 .fontawesome-section ul.icon-list li i {
   color: #8ab928;
